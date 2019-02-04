@@ -4,7 +4,7 @@ const path = require("path");
 
 const appDir = path.dirname(require.main.filename);
 
-router.use(express.static(appDir + "/"));
+router.use(express.static(appDir + "/public/"));
 
 router.get("/", (req, res) => {
   //res.send('Hello World!');
