@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Carimus Full-Stack Exercise</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet" />
+
+    <!-- Pagination plugin CSS -->
+    <link href="css/simplePagination.css" type="text/css" rel="stylesheet" />
+
+    <!-- CSS for the Loader that's shown when loading up the webpage -->
+    <link href="css/loader.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.min.css" rel="stylesheet" />
+
+    <!-- Personal CSS to separate from the Template's CSS -->
+    <link href="css/personalStyle.css" rel="stylesheet" />
+</head>
+
+<body onload="displayLoader()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GIF Simulator</a>
+        </div>
+    </nav>
+
+    <!-- Menu Content -->
+    <header class="masthead text-center text-white">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0">Display All GIFs Viewer</h1>
+                <p class="masthead-subheading mb-0">Click 'Reveal' to browse all GIFs!</p>
+                <a href="#" class="btn btn-success btn-xl rounded-pill mt-5" onclick="showAllGifs()">Reveal</a>
+                <a href="/" class="btn btn-dark btn-xl rounded-pill mt-5">Return to Main Menu</a>
+
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <!-- All GIFs from the Backend displayed using easyPagination plugin (10 images per page). -->
+    <div class="container">
+        <div id="loader"></div>
+        <div class="row align-items-center" style="display: none" id="myDIV">
+            <div class="animate-bottom">
+                <div id="pagination"></div>
+                <table id="content">
+                    <tbody>
+                        <!-- One pagination element consists of one 'tr' tag.-->
+
+                        <!-- Element 1 -->
+                        <tr>
+                            <td><img src="/gifs/0.gif" /></td>
+                        </tr>
+
+                        <!-- Element 2 -->
+                        <tr>
+                            <td><img src="/gifs/1.gif" /></td>
+                        </tr>
+
+                        <!-- Element 3 -->
+                        <tr>
+                            <td><img src="/gifs/2.gif" /></td>
+                        </tr>
+
+                        <!-- Element 4 -->
+                        <tr>
+                            <td><img src="/gifs/3.gif" /></td>
+                        </tr>
+
+                        <!-- Element 5 -->
+                        <tr>
+                            <td><img src="/gifs/4.gif" /></td>
+                        </tr>
+
+                        <!-- Element 6 -->
+                        <tr>
+                            <td><img src="/gifs/5.gif" /></td>
+                        </tr>
+
+                        <!-- Element 7 -->
+                        <tr>
+                            <td><img src="/gifs/6.gif" /></td>
+                        </tr>
+
+                        <!-- Element 8 -->
+                        <tr>
+                            <td><img src="/gifs/7.gif" /></td>
+                        </tr>
+
+                        <!-- Element 9 -->
+                        <tr>
+                            <td><img src="/gifs/8.gif" /></td>
+                        </tr>
+
+                        <!-- Element 10 -->
+                        <tr>
+                            <td><img src="/gifs/9.gif" /></td>
+                        </tr>
+
+                        <!-- Element 11 -->
+                        <tr>
+                            <td><img src="/gifs/10.gif" /></td>
+                        </tr>
+
+                        <!-- Element 12 -->
+                        <tr>
+                            <td><img src="/gifs/11.gif" /></td>
+                        </tr>
+
+                        <!-- Element 13 -->
+                        <tr>
+                            <td><img src="/gifs/12.gif" /></td>
+                        </tr>
+
+                        <!-- Element 14 -->
+                        <tr>
+                            <td><img src="/gifs/13.gif" /></td>
+                        </tr>
+
+                        <!-- Element 15 -->
+                        <tr>
+                            <td><img src="/gifs/14.gif" /></td>
+                        </tr>
+
+                        <!-- Element 16 -->
+                        <tr>
+                            <td><img src="/gifs/15.gif" /></td>
+                        </tr>
+
+                        <!-- Element 17 -->
+                        <tr>
+                            <td><img src="/gifs/16.gif" /></td>
+                        </tr>
+
+                        <!-- Element 18 -->
+                        <tr>
+                            <td><img src="/gifs/17.gif" /></td>
+                        </tr>
+
+                        <!-- Element 19 -->
+                        <tr>
+                            <td><img src="/gifs/18.gif" /></td>
+                        </tr>
+
+                        <!-- Element 20 -->
+                        <tr>
+                            <td><img src="/gifs/19.gif" /></td>
+                        </tr>
+
+                        <!-- Element 21 -->
+                        <tr>
+                            <td><img src="/gifs/20.gif" /></td>
+                        </tr>
+
+                        <!-- Element 22 -->
+                        <tr>
+                            <td><img src="/gifs/21.gif" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modified JQuery.min JS tailored to the simplePagination plugin -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+
+    <!-- JQuery/JS for the simplePagination plugin -->
+    <script src="js/jquery.simplePagination.js"></script>
+
+    <!-- Script for simplePagination functionality -->
+    <script>
+        jQuery(function ($) {
+            var items = $("#content tbody tr");
+
+            var numItems = items.length;
+
+            // 'perPage' sets the number of GIFs that should be on every page.
+            var perPage = 10;
+
+            // Display 10 GIFs per page.
+            items.slice(perPage).hide();
+
+            // Now setup the pagination using the `#pagination` div.
+            $("#pagination").pagination({
+                items: numItems,
+                itemsOnPage: perPage,
+
+                // This is the actual page changing functionality.
+                onPageClick: function (pageNumber) {
+                    // We need to show and hide `tr`s appropriately.
+                    var showFrom = perPage * (pageNumber - 1);
+                    var showTo = showFrom + perPage;
+
+                    // We'll first hide everything...
+                    items
+                        .hide()
+                        // ... and then only show the appropriate rows.
+                        .slice(showFrom, showTo)
+                        .show();
+                }
+            });
+        });
+    </script>
+
+    <!-- Loader/Spinner Script -->
+    <script>
+        var myVar;
+
+        function displayLoader() {
+            myVar = setTimeout(showPage, 80);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+
+    <!-- showAllGifs will make the GIFs w/ Pagination visible to the user -->
+    <script>
+        function showAllGifs() {
+            var x = document.getElementById("myDIV");
+
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Carimus Full-Stack Exercise</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet" />
+
+    <!-- Pagination plugin CSS -->
+    <link href="css/simplePagination.css" type="text/css" rel="stylesheet" />
+
+    <!-- CSS for the Loader that's shown when loading up the webpage -->
+    <link href="css/loader.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.min.css" rel="stylesheet" />
+
+    <!-- Personal CSS to separate from the Template's CSS -->
+    <link href="css/personalStyle.css" rel="stylesheet" />
+</head>
+
+<body onload="displayLoader()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GIF Simulator</a>
+        </div>
+    </nav>
+
+    <!-- Menu Content -->
+    <header class="masthead text-center text-white">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0">Random GIFs Viewer</h1>
+                <p class="masthead-subheading mb-0">Click 'Reveal' repeatedly to see a random GIF appear!</p>
+                <a href="#" class="btn btn-success btn-xl rounded-pill mt-5" onclick="display_random_image()">Reveal</a>
+                <a href="/" class="btn btn-dark btn-xl rounded-pill mt-5">Return to Main Menu</a>
+
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <!-- Random GIF Content -->
+    <div class="container">
+        <div id="loader"></div>
+        <div class="row align-items-center" style="display: none" id="myDIV2"></div>
+
+        <!-- Loader/Spinner Script -->
+        <script>
+            var myVar;
+
+            function displayLoader() {
+                myVar = setTimeout(showPage, 80);
+            }
+
+            function showPage() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
+
+        <!-- showAllGifs will show all available GIFs from the backend -->
+        <script>
+            function showAllGifs() {
+                var x = document.getElementById("myDIV");
+
+
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+
+        <!-- Randomly pulls an image from the GIF folder -->
+        <script>
+            function display_random_image() {
+                var x = document.getElementById("myDIV2");
+
+
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                }
+
+                // Fill the 'theImages' array with all GIFs from the Backend. 
+                var theImages = [{
+                        src: "/gifs/0.gif",
+                        width: "240",
+                        height: "160"
+                    },
+                    {
+                        src: "/gifs/1.gif",
+                        width: "320",
+                        height: "195"
+                    },
+                    {
+                        src: "/gifs/2.gif",
+                        width: "500",
+                        height: "343"
+                    },
+                    {
+                        src: "/gifs/3.gif",
+                        width: "240",
+                        height: "160"
+                    },
+                    {
+                        src: "/gifs/4.gif",
+                        width: "320",
+                        height: "195"
+                    },
+                    {
+                        src: "/gifs/5.gif",
+                        width: "500",
+                        height: "343"
+                    },
+                    {
+                        src: "/gifs/6.gif",
+                        width: "240",
+                        height: "160"
+                    },
+                    {
+                        src: "/gifs/7.gif",
+                        width: "320",
+                        height: "195"
+                    },
+                    {
+                        src: "/gifs/8.gif",
+                        width: "500",
+                        height: "343"
+                    },
+                    {
+                        src: "/gifs/9.gif",
+                        width: "240",
+                        height: "160"
+                    },
+                    {
+                        src: "/gifs/10.gif",
+                        width: "320",
+                        height: "195"
+                    },
+                    {
+                        src: "/gifs/11.gif",
+                        width: "500",
+                        height: "343"
+                    },
+                    {
+                        src: "/gifs/12.gif",
+                        width: "500",
+                        height: "343"
+                    },
+                    {
+                        src: "/gifs/13.gif",
+                        width: "240",
+                        height: "160"
+                    },
+                    {
+                        src: "/gifs/14.gif",
+                        width: "320",
+                        height: "195"
+                    },
+                    {
+                        src: "/gifs/15.gif",
+                        width: "500",
+                        height: "343"
+                    },
+                    {
+                        src: "/gifs/16.gif",
+                        width: "240",
+                        height: "160"
+                    },
+                    {
+                        src: "/gifs/17.gif",
+                        width: "320",
+                        height: "195"
+                    },
+                    {
+                        src: "/gifs/18.gif",
+                        width: "500",
+                        height: "343"
+                    },
+                    {
+                        src: "/gifs/19.gif",
+                        width: "240",
+                        height: "160"
+                    },
+                    {
+                        src: "/gifs/20.gif",
+                        width: "320",
+                        height: "195"
+                    },
+                    {
+                        src: "/gifs/21.gif",
+                        width: "500",
+                        height: "343"
+                    }
+                ];
+
+                var preBuffer = [];
+                for (var i = 0, j = theImages.length; i < j; i++) {
+                    preBuffer[i] = new Image();
+                    preBuffer[i].src = theImages[i].src;
+                    preBuffer[i].width = theImages[i].width;
+                    preBuffer[i].height = theImages[i].height;
+                }
+
+                // create random image number
+                function getRandomInt(min, max) {
+                    //  return Math.floor(Math.random() * (max - min + 1)) + min;
+
+                    imn = Math.floor(Math.random() * (max - min + 1)) + min;
+                    return preBuffer[imn];
+                }
+
+                // 0 is first image,   preBuffer.length - 1) is  last image
+
+                var newImage = getRandomInt(0, preBuffer.length - 1);
+
+                // remove the previous images
+                var images = document.getElementsByTagName("img");
+                var l = images.length;
+                for (var p = 0; p < l; p++) {
+                    images[0].parentNode.removeChild(images[0]);
+                }
+                // display the image
+                document.getElementById("myDIV2").appendChild(newImage);
+            }
+        </script>
+
+        <!-- JQuery.min JS -->
+        <script src="js/jquery-1.10.2.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

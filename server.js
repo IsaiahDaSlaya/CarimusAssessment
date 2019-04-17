@@ -1,28 +1,18 @@
-
-
-// jshint esversion: 6
-const express = require('express');
-const path = require('path');
-const morgan = require('morgan');
-const fs = require('file-system');
-const home = require('./router/home.js');
-const db = require('./router/db.js');
-
-//log is personally written to test out different logging levels
-//const log = require('./modules/logger.js');
-const winston = require('./config/winston');
+const express = require('./node_modules/express');
+const appRoutes = require('./router/appRoutes.js');
 const app = express();
 
-app.use(morgan('[:date[clf]] :remote-addr - :remote-user  ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" ', { stream: winston.stream }));
-app.use('/', home);
-app.use('/db', db);
+// Allows our application to serve static files from the public directory
+// to each of our different routes '/', '/allGifs', '/randomGifs'.
 
-//PORT AND HOST MY NEED TO BE CHANGED FOR DOCKERFILE
-const port = (process.env.PORT || 80);
-const myhost = '0.0.0.0';
-app.listen(port, myhost, ()  => {
-    winston.info(`Website is listening at http://${myhost}:${port}...`);
-    //log.msg(`Website is listening at http://${myhost}:${port}...`);
-    
-});
+app.use('/', appRoutes);
+app.use('/allGifs', appRoutes);
+app.use('/randomGifs', appRoutes);
 
+// Our application's port is set to 3000.
+const port = process.env.PORT || 3000
+
+// Confirmation that our live server is active on port 3000.
+app.listen(port, function () {
+    console.log(`Full Stack - JavaScript listening on port ${port}!`)
+})

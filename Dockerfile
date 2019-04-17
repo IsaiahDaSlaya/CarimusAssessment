@@ -1,14 +1,6 @@
-FROM node:8
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
+FROM mhart/alpine-node:8
+WORKDIR /src
 EXPOSE 3000
-
-CMD ["npm", "start"]
-
+ENTRYPOINT ["npm", "start"]
+COPY . /src
+RUN npm install

@@ -1,23 +1,24 @@
 {
-  "name": "acmwebsite",
+  "name": "carimus",
   "version": "1.0.0",
-  "description": "The 2nd version of the ACM Website.",
+  "description": "Exercise for Carimus.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Isaiah Binford",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
     "file-system": "^2.2.2",
+    "fs": "0.0.1-security",
     "jshint": "^2.9.7",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.9",
     "path": "^0.12.7",
+    "serve-index": "^1.9.1",
     "time-stamp": "^2.2.0",
-    "underscore": "^1.9.1",
-    "winston": "^3.2.1"
+    "underscore": "^1.9.1"
   }
 }
