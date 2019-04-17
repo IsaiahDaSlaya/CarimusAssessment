@@ -1,0 +1,1 @@
+To quickly run the project, just type 'npm install' to install all modules and then 'npm run start' to run the server (located on port 3000). Then, go to localhost 3000 to view the application.
